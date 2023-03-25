@@ -1,7 +1,7 @@
 // import dayjs to format date
 import dayjs from 'dayjs';
 import { Schema, model } from 'mongoose';
-// reaction schema will be imported from Reaction.js
+import reactionSchema from './Reaction.js';
 
 // create a schema for thoughts
 const thoughtSchema = new Schema(
