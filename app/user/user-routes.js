@@ -132,22 +132,6 @@ router.delete('/:id/friends/:friendId', (req, res) => {
         });
 });
 
-// get all friends of a user
-router.get('/:id/friends', (req, res) => {
-    // get the user id from the request params
-    const userID = req.params.id;
-
-    // get all friends of the user
-    userController.getAllFriends(userID)
-        .then(friends => {
-            // send the friends back to the client
-            res.json(friends);
-        })
-        .catch(err => {
-            // send the error back to the client
-            res.json(err);
-        });
-});
 
 // export the router
 export default router;
