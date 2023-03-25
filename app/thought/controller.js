@@ -11,7 +11,7 @@ const thoughtController = {
         return User.findByIdAndUpdate(
             {_id: userID},
             {$push: {thoughts: thought._id}},
-            {new: true, runValidators: true}
+            {new: true}
         );
     },
     // get all thoughts
@@ -27,7 +27,7 @@ const thoughtController = {
         return Thought.findByIdAndUpdate(
             {_id: thoughtID},
             {$set: newThought},
-            {new: true, runValidators: true}
+            {new: true}
         );
     },
     // delete a thought by id
@@ -39,7 +39,7 @@ const thoughtController = {
         return Thought.findByIdAndUpdate(
             {_id: thoughtID},
             {$push: {reactions: reactionBody}},
-            {new: true, runValidators: true}
+            {new: true}
         );
     },
     // remove a reaction from a thought
@@ -47,7 +47,7 @@ const thoughtController = {
         return Thought.findByIdAndUpdate(
             {_id: thoughtID},
             {$pull: {reactions: {reactionID}}},
-            {new: true, runValidators: true}
+            {new: true}
         );
     }
 };
