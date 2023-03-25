@@ -146,7 +146,7 @@ router.delete('/:thoughtID/reactions/:reactionID', (req, res) => {
     const reactionID = req.params.reactionID;
 
     // delete the reaction
-    thoughtController.deleteReaction(thoughtID, reactionID)
+    thoughtController.removeReaction(thoughtID, reactionID)
         .then(thought => {
             // send the updated thought back to the client
             res.json(thought);
